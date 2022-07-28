@@ -1,0 +1,38 @@
+Hi Community,
+
+I need to fit a curve with this equation : (-k*t+To)+t^-0,5
+
+"k" and "To" are two constant and "t" is my time.
+
+I did this fit on Excel thanks to the solver with the below conditions :
+
+    - Sum of square (SSR) : I want the minimum
+    - I want to find the better "k" and "To"
+
+
+However I don't know how I can do this on R.
+
+My aim : I want to fit my curve on R with this equation and find k and To.
+
+For example, I did that just below but I have three problems (and maybe it's not the good solution):
+
+    - It give me a linear regression
+    - My coefficient aren't free (I need to find a solution where my coefficients can change in function of the better result found by R).
+    - My last line code doesn't works
+
+
+t <- PLR2decroissance$pupil_timestamp_secondes      # these are my time points
+k <- 2.5         # time constant
+To <- 0.48        # growth constant
+y <- (-k*t+To)+t^-0.5 # my equation
+
+# visualise
+par(mfrow = c(1, 2))
+plot(t, y)    
+lines(PLR2decroissance$pupil_timestamp_secondes , PLR2decroissance$diameter_3d_corrige ,  col="red")
+
+Thank you very much for your help.
+
+Yours sincerely,
+
+GIOVANNANGELI Cyril
